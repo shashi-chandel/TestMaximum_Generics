@@ -5,61 +5,71 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class FindMaximumTest {
-
+	FindMaximum findMaximumObj; 
+	
 	@Test
-	public void givenMaxAtPositionOne_ShouldReturnSameNumber() {
-		int max = FindMaximum.findMaximum(5, 3, 1);
-		assertEquals(5, max);
+	public void givenMaxIntAtPositionOne_ShouldReturnSameNumber() {
+		findMaximumObj = new FindMaximum<Integer>(5,3,1);
+		findMaximumObj.maximum();
+		assertEquals(5,findMaximumObj.maximum());
 	}
 
 	@Test
-	public void givenMaxAtPositionTwo_ShouldReturnSameNumber() {
-		int max = FindMaximum.findMaximum(3, 5, 1);
-		assertEquals(5, max);
+	public void givenMaxIntAtPositionTwo_ShouldReturnSameNumber() {
+		findMaximumObj = new FindMaximum<Integer>(3,5,1);
+		findMaximumObj.maximum();
+		assertEquals(5,findMaximumObj.maximum());
 	}
 
 	@Test
-	public void givenMaxAtPositionThree_ShouldReturnSameNumber() {
-		int max = FindMaximum.findMaximum(3, 1, 5);
-		assertEquals(5, max);
-	}
-
-	@Test
-	public void givenMaxFloatAtPositionOne_ShouldReturnSameNumber() {
-		Float max = FindMaximum.findMaximum(5.5f, 3.2f, 1.8f);
-		assertEquals(5.5, max, 0.0);
-	}
-
-	@Test
-	public void givenMaxFloatAtPositionTwo_ShouldReturnSameNumber() {
-		Float max = FindMaximum.findMaximum(3.2f, 5.5f, 1.8f);
-		assertEquals(5.5, max, 0.0);
-	}
-
-	@Test
-	public void givenMaxFloatAtPositionThree_ShouldReturnSameNumber() {
-		Float max = FindMaximum.findMaximum(3.2f, 1.5f, 5.5f);
-		assertEquals(5.5, max, 0.0);
+	public void givenMaxIntAtPositionThree_ShouldReturnSameNumber() {
+		findMaximumObj = new FindMaximum<Integer>(3,1,5);
+		findMaximumObj.maximum();
+		assertEquals(5,findMaximumObj.maximum());
 	}
 	
 	@Test
-    public void givenMaxAtPositionOne_ShouldReturnSameString()
+    public void givenMaxFloatAtPositionOne_ShouldReturnSameNumber()
     {
-    	String max = FindMaximum.findMaximum("Peach","Apple","Banana");
-        assertEquals("Peach", max);
+		findMaximumObj = new FindMaximum<Float>(5.5f, 3.2f, 1.8f);
+		findMaximumObj.maximum();
+		assertEquals(5.5f,findMaximumObj.maximum());
     }
     
     @Test
-    public void givenMaxAtPositionTwo_ShouldReturnSameString()
+    public void givenMaxFloatAtPositionTwo_ShouldReturnSameNumber()
     {
-    	String max = FindMaximum.findMaximum("Apple", "Peach","Banana");
-    	assertEquals("Peach", max);
+    	findMaximumObj = new FindMaximum<Float>(3.2f , 5.5f , 1.8f);
+        findMaximumObj.maximum();
+		assertEquals(5.5f,findMaximumObj.maximum());
     }
     
     @Test
-    public void givenMaxAtPositionThree_ShouldReturnSameString()
+    public void givenMaxFloatAtPositionThree_ShouldReturnSameNumber()
     {
-    	String max = FindMaximum.findMaximum("Apple","Banana", "Peach");
-    	assertEquals("Peach", max);
+    	findMaximumObj = new FindMaximum<Float>(3.2f, 1.5f, 5.5f);
+        findMaximumObj.maximum();
+		assertEquals(5.5f,findMaximumObj.maximum());
     }
+
+	@Test
+	public void givenMaxAtPositionOne_ShouldReturnSameString() {
+		findMaximumObj = new FindMaximum<String>("Peach", "Apple", "Banana");
+		findMaximumObj.maximum();
+		assertEquals("Peach",findMaximumObj.maximum());
+	}
+
+	@Test
+	public void givenMaxAtPositionTwo_ShouldReturnSameString() {
+		findMaximumObj = new FindMaximum<String>("Apple", "Peach", "Banana");
+		findMaximumObj.maximum();
+		assertEquals("Peach",findMaximumObj.maximum());
+	}
+
+	@Test
+	public void givenMaxAtPositionThree_ShouldReturnSameString() {
+		findMaximumObj = new FindMaximum<String>("Apple", "Banana", "Peach");
+		findMaximumObj.maximum();
+		assertEquals("Peach",findMaximumObj.maximum());
+	}
 }
