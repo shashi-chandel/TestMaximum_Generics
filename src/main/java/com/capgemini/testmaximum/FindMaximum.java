@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class FindMaximum {
 	/**
 	 * UC1
+	 * 
 	 * @param x
 	 * @param y
 	 * @param z
@@ -18,6 +19,23 @@ public class FindMaximum {
 			max = z;
 		return max;
 	}
+
+	/**
+	 * UC2
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @return
+	 */
+	public static Float findMaximum(Float x, Float y, Float z) {
+		Float max = x;
+		if (y.compareTo(max) > 0)
+			max = y;
+		if (z.compareTo(max) > 0)
+			max = z;
+		return max;
+	}
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter 3 integers to find maximum");
@@ -27,7 +45,15 @@ public class FindMaximum {
 		Integer y = Integer.parseInt(sc.nextLine());
 		System.out.println("Enter third integer");
 		Integer z = Integer.parseInt(sc.nextLine());
-		System.out.println("Maximum of "+"( "+x+", "+y+", "+z+" ) "+ "is "+findMaximum(x, y, z));
+		System.out.println("Maximum of " + "( " + x + ", " + y + ", " + z + " ) " + "is " + findMaximum(x, y, z));
+		System.out.println("Enter 3 float numbers to find maximum");
+		System.out.println("Enter first float number");
+		Float x1 = Float.parseFloat(sc.nextLine());
+		System.out.println("Enter second float number");
+		Float y1 = Float.parseFloat(sc.nextLine());
+		System.out.println("Enter third float number");
+		Float z1 = Float.parseFloat(sc.nextLine());
+		System.out.println("Maximum of " + "( " + x1 + ", " + y1 + ", " + z1 + " ) " + "is " + findMaximum(x1, y1, z1));
 		sc.close();
 	}
 }
