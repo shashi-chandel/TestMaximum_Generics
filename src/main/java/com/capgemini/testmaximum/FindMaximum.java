@@ -35,6 +35,14 @@ public class FindMaximum {
 			max = z;
 		return max;
 	}
+	public static String findMaximum(String x,String y,String z) {
+		String max = x;
+		if(y.compareTo(max)>0)
+			max = y;
+		if(z.compareTo(max)>0)
+			max = z;
+		return max;
+	}
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -54,6 +62,14 @@ public class FindMaximum {
 		System.out.println("Enter third float number");
 		Float z1 = Float.parseFloat(sc.nextLine());
 		System.out.println("Maximum of " + "( " + x1 + ", " + y1 + ", " + z1 + " ) " + "is " + findMaximum(x1, y1, z1));
+		System.out.println("Enter 3 integers to find maximum");
+        System.out.println("Enter first String");
+        String x2 = sc.nextLine();
+        System.out.println("Enter second String");
+        String y2 = sc.nextLine();
+        System.out.println("Enter third String");
+        String z2 = sc.nextLine();
+        System.out.println("Maximum of given strings "+findMaximum(x2,y2,z2));
 		sc.close();
 	}
 }
